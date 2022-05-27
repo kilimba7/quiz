@@ -11,35 +11,35 @@
 
 
 <body>
-    <header>
-        <nav>
-            <ul>
-                    <a href= "#view-high-scores">View High Scores</a>
-            </ul>
-        </nav>
-        <p id="timer">
-            Time: 0
-        </p>
-    </header>
 
-    <!-- Seperate section for the quiz part? -->
-    <main id="quiz" class="content">
-        <div class="page">
+    <main>
+      <!-- Need to link this to the high scores -->
+    <section id="view-high-scores" >
+        <div class="score">
+            <a href="./high-scores.html"> View high scores </a>
+            <p id="timer">
+                Time: 0
+            </p>
+        </div>
+    </section>    
+    
+    
+    <section id="quiz">
+        <div class="content">
         <h1>Coding Quiz Challenge</h1>
         <p>
             Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!
-        </p>
-    <!-- Created a button to start the quiz -->   
+        </p> 
+        </div>
+        
+<!-- Created a button to start the quiz -->  
+        <div>
         <button class="btn" id="start-quiz">Start Quiz</button>
         </div>
-    </main>
- 
- 
-    <!-- Need to link this to the high scores -->
-    <section id="view-high-scores" class="score">
-
     </section>
     
+    </main>
+   
     <script src="./assets/js/script.js"></script>
 
 <!-- <footer> 

@@ -4,7 +4,7 @@
   
   :root {
     --primary: #000000;
-    --secondary: #854444;
+    --secondary: #2130a2;
     --tertiary: rgb(232, 243, 245);
     --grey: #333;
     font-size: 62.5%;
@@ -19,29 +19,19 @@
     min-height: 100vh;
     flex-direction: column;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-style: solid;
+    border: 0ex;
   }
   
-  header {
+  .score {
     color: var(--primary);
     padding: 30px 25px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     font-size: 2.2rem;
+    align-items: center;
   }
-  
-  header nav {
-      align-items: center;
-  }
-
-/* footer { 
-    width: 100%;
-    color: var(--primary);
-    font-size: 2.4rem;
-    padding: 20px;
-  }*/
-
-  
   .content {
     color: var(--primary);
     margin-bottom: 5px;
@@ -49,7 +39,8 @@
     font-size: 1.8rem;
     display: flex;  
     justify-content: center;
-      flex-wrap: wrap;
+    flex-wrap: wrap;
+    position: relative;
   }
 
   .content-h1 {
@@ -59,20 +50,10 @@
     font-size: 4.5rem;
     display: flex;  
     justify-content: center;
-      flex-wrap: wrap;
-  }
-
-  .page {
-    flex: 1;
-    display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    margin: 25px auto;
-    width: 95%;
-    position: relative;
   }
 
-  .page p {
+  .content p {
     line-height: 1.7;
     color: var(--primary);
     width: 80%;
@@ -82,19 +63,22 @@
 
   .btn {
     border: none;
-    display: inline-block;
     padding: 10px 15px;
     background: var(--secondary);
     font-size: 2.2rem;
     border-radius: 8px;
-    position: fixed;
+    position: relative;
     margin: auto;
-    bottom: 60%;
     justify-content: center;
     color: var(--tertiary);
-   
+    display: block;
   }
 
-  
-  
-  
+
+
+  /* footer { 
+    width: 100%;
+    color: var(--primary);
+    font-size: 2.4rem;
+    padding: 20px;
+  }*/
