@@ -12,23 +12,27 @@
 
 <body>
     <header>
-        <p id="timer">
-            Time:
-        </p>
         <nav>
             <ul>
                     <a href= "#view-high-scores">View High Scores</a>
             </ul>
         </nav>
+        <p id="timer">
+            Time: 0
+        </p>
     </header>
 
     <!-- Seperate section for the quiz part? -->
-    <section id="quiz">
-        <h1 class="page-title">Coding Quiz Challenge</h1>
+    <main id="quiz" class="content">
+        <div class="page">
+        <h1>Coding Quiz Challenge</h1>
         <p>
             Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!
         </p>
-    </section>
+    <!-- Created a button to start the quiz -->   
+        <button class="btn" id="start-quiz">Start Quiz</button>
+        </div>
+    </main>
  
  
     <!-- Need to link this to the high scores -->
@@ -36,9 +40,10 @@
 
     </section>
     
+    <script src="./assets/js/script.js"></script>
 
-<footer>
+<!-- <footer> 
     &copy;2022 by Kilimba Dyauli
-</footer>
+</footer> -->
 </body>
 </html>
