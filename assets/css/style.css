@@ -29,9 +29,8 @@ header {
     flex-wrap: wrap;
     font-size: 2.2rem;
     align-items: center;
-}
-  
-  .content {
+}  
+.content {
     font-size: 1.8rem;
     display: flex;  
     justify-content: center;
@@ -53,15 +52,22 @@ header {
   .content ul {
     width: 80%;
     margin: 0 auto;
+    display: block;
   }
+
+  
+.feedbackDiv {
+  padding: 10px 15px;
+  min-height: 15%;
+}
+
 
   .btn {
     border: none;
-    padding: 10px 15px;
+    padding: 8px 15px;
     background: var(--secondary);
     font-size: 2.2rem;
     border-radius: 8px;
-    position: relative;
     margin:0 auto;
     color: var(--tertiary);
     display: block;

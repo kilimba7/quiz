@@ -33,10 +33,8 @@ var time = 75;
 var timerId;
 
 var targetHide = document.querySelector("#start-screen");
-var quizScreen = document.querySelector("#quiz-screen");
 var timeEl = document.querySelector("#time");
 var startBtn = document.querySelector("#start-quiz");
-var feedbackEl = document.querySelector("#feedback");
 var nextQuestion = document.querySelector("#quiz-title");
 var nextChoice = document.createElement("ul");
     
@@ -71,7 +69,6 @@ var getQuestion = function(){
     nextChoice.innerHTML = "";
     // For loops to loop through all info in array
     for (var i = 0; i < questions.length; i++) {
-        // Appends question title only
         var userQuestion = questions[questionIndex].title;
         var userChoices = questions[questionIndex].choice;
         nextQuestion.textContent = userQuestion;
@@ -80,7 +77,7 @@ var getQuestion = function(){
     userChoices.forEach(function (newItem) {
         var listItem = document.createElement("li");
         listItem.textContent = newItem;
-        listItem.className = "btn"
+        listItem.className = "btn";
         nextQuestion.appendChild(nextChoice);
         nextChoice.appendChild(listItem);
         listItem.onclick = questionClick;
@@ -90,31 +87,33 @@ var getQuestion = function(){
 // click on question answer either generate new question or end quiz if final question
 function questionClick() {
     var userAnswer = questions[questionIndex].answer;
-    // check if user guessed wrong
-    if (this.value !== userAnswer) {
-      
-        feedbackEl.textContent = "Wrong!";
-    } else {
+    var feedbackDiv = document.createElement("div");
+    feedbackDiv.setAttribute("class", "feedbackDiv");
+    
+    
+        // Correct condition 
+        if (feedbackDiv == userAnswer) {
+            feedbackDiv.textContent = "Correct";
+            // default to this if wrong 
+        } else {
+            feedbackDiv.textContent = "Wrong";
+        }
+    
 
-      feedbackEl.textContent = "Correct!";
-    }
-  
-    // flash right/wrong feedback on page for half a second
-    feedbackEl.setAttribute("class", "feedback");
-    setTimeout(function() {
-      feedbackEl.setAttribute("class", "feedback hide");
-    }, 1000);
-  
     // move to next question
     questionIndex++;
   
     // check if we've run out of questions
-    if (questions.length === questionIndex) {
+    if (questionIndex >= questions.length) {
       quizEnd();
+      feedbackDiv.textContent = "End of the quiz!";
     } else {
       getQuestion();
     }
-  }
+
+    nextQuestion.appendChild(feedbackDiv);
+}
+  
   
 // end the quiz function
   function quizEnd() {
@@ -122,7 +121,7 @@ function questionClick() {
     clearInterval(timerId);
   
     // hide questions section
-    quizScreen.innerHTML = "";
+    nextQuestion.innerHTML = "";
   };
 
   // user clicks button to start quiz
