@@ -50,6 +50,10 @@ header {
     width: 80%;
     margin: 0 auto;
   }
+  .content ul {
+    width: 80%;
+    margin: 0 auto;
+  }
 
   .btn {
     border: none;
