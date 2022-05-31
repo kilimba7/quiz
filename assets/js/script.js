@@ -90,12 +90,9 @@ function questionClick() {
     var feedbackDiv = document.createElement("div");
     feedbackDiv.setAttribute("class", "feedbackDiv");
     
-    // function compare(event) {
-    //     var element = event.target;
-    
-    //     if (element.matches("li")) {
+   
         // Correct condition 
-        if (userAnswer === ("li")) {
+        if (userAnswer == ("li")) {
             feedbackDiv.textContent = "Correct: the answer is " + questions[questionIndex].answer;
             // default to this if wrong 
         } else {
