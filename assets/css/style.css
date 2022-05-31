@@ -72,5 +72,12 @@ header {
     color: var(--tertiary);
     display: block;
   }
+  .btnChoice {
+    border-bottom-style: solid;
+    border-bottom-color:var(--secondary);
+    font-size: 2.2rem;
+    margin:0 auto;
+    display: block;
+  }
 
 

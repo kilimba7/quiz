@@ -77,7 +77,7 @@ var getQuestion = function(){
     userChoices.forEach(function (newItem) {
         var listItem = document.createElement("li");
         listItem.textContent = newItem;
-        listItem.className = "btn";
+        listItem.className = "btnChoice";
         nextQuestion.appendChild(nextChoice);
         nextChoice.appendChild(listItem);
         listItem.onclick = questionClick;
@@ -90,13 +90,16 @@ function questionClick() {
     var feedbackDiv = document.createElement("div");
     feedbackDiv.setAttribute("class", "feedbackDiv");
     
+    // function compare(event) {
+    //     var element = event.target;
     
+    //     if (element.matches("li")) {
         // Correct condition 
-        if (feedbackDiv == userAnswer) {
-            feedbackDiv.textContent = "Correct";
+        if (userAnswer === ("li")) {
+            feedbackDiv.textContent = "Correct: the answer is " + questions[questionIndex].answer;
             // default to this if wrong 
         } else {
-            feedbackDiv.textContent = "Wrong";
+            feedbackDiv.textContent = "Wrong: the answer is " + questions[questionIndex].answer;
         }
     
 
