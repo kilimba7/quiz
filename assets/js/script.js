@@ -29,6 +29,7 @@ var questions = [
 
 
 var questionIndex = 0;
+// var score = 0;
 var time = 75;
 var timerId;
 
@@ -87,13 +88,18 @@ var getQuestion = function(){
 // click on question answer either generate new question or end quiz if final question
 function questionClick() {
     var userAnswer = questions[questionIndex].answer;
+
+
+
     var feedbackDiv = document.createElement("div");
     feedbackDiv.setAttribute("class", "feedbackDiv");
-    
+ 
    
         // Correct condition 
-        if (userAnswer == ("li")) {
+        if (userAnswer.match("li"[questionIndex])) {
+          
             feedbackDiv.textContent = "Correct: the answer is " + questions[questionIndex].answer;
+            
             // default to this if wrong 
         } else {
             feedbackDiv.textContent = "Wrong: the answer is " + questions[questionIndex].answer;
@@ -122,6 +128,8 @@ function questionClick() {
   
     // hide questions section
     nextQuestion.innerHTML = "";
+//need to redirect towards score
+
   };
 
   // user clicks button to start quiz
